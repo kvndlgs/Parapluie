@@ -17,7 +17,7 @@ brand: {
   950: 'hsl(252, 98%, 6%)'
 },
 
-accent: {
+base: {
   50: 'hsl(300, 15%, 96%)',
   100: 'hsl(300, 15%, 88%)',
   200: 'hsl(300,15%, 76%)',
@@ -28,11 +28,40 @@ accent: {
   700: 'hsl(300, 15%, 26%)',
   800: 'hsl(300, 15%, 16%)',
   900: 'hsl(300, 15%, 6%)',
+},
+
+accent: {
+
+},
+
+danger: {
+
+},
+
+warning: {
+
+},
+
+success: {
+
+},
+
+neutral: {
+
+
 }
+
+shadows: {
+
+}
+
+
 ```
 
 ## Typography
 
 ### Fonts
 
-- 'PP Monument Normal'
+- 'PP Monument Normal Regular '
+
+- 'PP Monument Normal Black'
