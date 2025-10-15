@@ -6,8 +6,11 @@ import { useFonts } from 'expo-font';
 
 export default function App() {
   const [loaded] = useFonts({
-    monumentNormal: require('./assets/fonts/PPMonumentNormal-Regular.otf'),
-    monumentNormalBlack: require('./assets/fonts/PPMonumentNormal-Black.otf'),
+    'Monument-Regular': require('./fonts/PPMonumentNormal-Regular.otf'),
+    'Monument-Black': require('./fonts/PPMonumentNormal-Black.otf'),
+    'Monument-Light': require('./fonts/PPMonumentNormal-Light.otf'),
+    'MonumentWide-Regular': require('./fonts/PPMonumentWide-Regular.otf'),
+    'MonumentWide-Black': require('./fonts/PPMonumentWide-Black.otf'),
   });
   if (!loaded) return null; // or a loading spinner, etc (you can also use SplashScreen)
     return (

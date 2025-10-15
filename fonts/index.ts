@@ -1,33 +1,10 @@
-import localFont from 'next/font/local';
+// Font family names for use in React Native
+// Use these in your styles like: { fontFamily: 'Monument-Regular' }
 
-export const monumentNormal = localFont({
-  src: [
-    {
-      path: './PPMonumentNormal-Regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './PPMonumentNormal-Black.otf',
-      weight: '900',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-monument-normal',
-});
-
-export const monumentWide = localFont({
-  src: [
-    {
-      path: './PPMonumentWide-Regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './PPMonumentWide-Black.otf',
-      weight: '900',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-monument-wide',
-});
+export const FontFamilies = {
+  MonumentRegular: 'Monument-Regular',
+  MonumentBlack: 'Monument-Black',
+  MonumentLight: 'Monument-Light',
+  MonumentWideRegular: 'MonumentWide-Regular',
+  MonumentWideBlack: 'MonumentWide-Black',
+} as const;
