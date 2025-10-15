@@ -1,17 +1,17 @@
-import React, { use } from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { OnboardingNavigator } from './src/navigation/OnboardingNavigator';
+import { Provider } from 'react-redux';
+import { store } from './src/store';
+import { RootNavigator } from './src/navigation/RootNavigator';
 import { useFonts } from 'expo-font';
-import { useEffect } from 'react';
-import { testConnection } from './src/lib/testSupabase'
-
+import { testConnection } from './src/lib/testSupabase';
 
 export default function App() {
   useEffect(() => {
     testConnection();
   }, []);
-  
+
   const [loaded] = useFonts({
     'Monument-Regular': require('./fonts/PPMonumentNormal-Regular.otf'),
     'Monument-Black': require('./fonts/PPMonumentNormal-Black.otf'),
@@ -19,11 +19,15 @@ export default function App() {
     'MonumentWide-Regular': require('./fonts/PPMonumentWide-Regular.otf'),
     'MonumentWide-Black': require('./fonts/PPMonumentWide-Black.otf'),
   });
-  if (!loaded) return null; // or a loading spinner, etc (you can also use SplashScreen)
-    return (
-    <NavigationContainer>
-      <OnboardingNavigator />
-      <StatusBar style="light" />
-    </NavigationContainer>
+
+  if (!loaded) return null;
+
+  return (
+    <Provider store={store}>
+      <NavigationContainer>
+        <RootNavigator />
+        <StatusBar style="light" />
+      </NavigationContainer>
+    </Provider>
   );
 }

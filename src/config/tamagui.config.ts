@@ -19,7 +19,8 @@ const MonumentNormal = createFont({
     },
     '900': {
       normal: 'PPMonumentNormalBlack'
-  },
+    }
+  }
 });
 
 
