@@ -13,6 +13,9 @@ Featuring a friendly AI powered guide named Walter.
 - Navigation structure: See stacks.md
 - UI references: See screenshots/ directory
 - Design system: See design-system.md
+- API Specs: See api-spec.md
+- Walter AI spec: See walter-ai-spec.md
+
 
 ## Tech Stack
 

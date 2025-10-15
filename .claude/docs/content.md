@@ -205,3 +205,6 @@ Vous pouvez maintenant explorer les avantages de Parapluie-Plus gratuitement pen
 ### Main Button Text 6
 
 `Visiter avec Walter`
+
+### Bottom Navigation Bar
+
