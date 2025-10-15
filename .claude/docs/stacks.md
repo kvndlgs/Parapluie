@@ -12,6 +12,12 @@ RootNavigator (Stack)
 └── MainNavigator (authenticated users)
 ```
 
+- ACTUAL navigation: 3 tabs (Accueil, Walter, Sécurité)
+- Remove 5-tab confusion from stacks.md
+- Walter button opens chat modal overlay
+- Deep link handling
+- Navigation state persistence
+
 ## OnboardingStack
 
 **Type:** Stack Navigator
@@ -78,28 +84,16 @@ Permissions  Invitation   Home
    - Badge: Alert count
    - Screen: HomeScreen
 
-2. **CalendarTab** (`/calendar`)
-   - Icon: 📅 (calendar icon)
-   - Label: "Calendrier"
-   - Badge: Event count
-   - Screen: CalendarScreen
+2. **WalterChatModal** (`/modal/walter-chat`)
+   - Icon: 🎤(microphone icon)
+   - Label: "Walter (Chat avec Walter)"
+   - Screen: ModalChatScreen
 
-3. **NewsTab** (`/news`)
-   - Icon: 📰 (news icon)
-   - Label: "Actualités"
-   - Badge: Unread count
-   - Screen: NewsScreen
-
-4. **LearningTab** (`/learning`)
-   - Icon: 🎓 (graduation cap icon)
-   - Label: "Apprentissage"
-   - Badge: New lessons count
-   - Screen: LearningCenterScreen
-
-5. **ProfileTab** (`/profile`)
-   - Icon: 👤 (person icon)
-   - Label: "Profil"
-   - Screen: ProfileScreen
+3. **SafetyTab** (`/safety`)
+   - Icon: 🛡️ (shield icon)
+   - Label: "Sécuriter"
+   - Badge: None?
+   - Screen: SafetyScreen
 
 ## Modal Stack
 
