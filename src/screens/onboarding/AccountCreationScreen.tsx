@@ -194,38 +194,82 @@ export function AccountCreationScreen({ navigation, route }: Props) {
 
   const createUserProfile = async (userId: string, method: 'email' | 'google' | 'apple') => {
     try {
-      // Create user profile
-      const { error: profileError } = await supabase.from('user_profiles').insert({
-        id: userId,
-        first_name: onboardingData.name,
-        phone_number: onboardingData.phone,
-        email: email,
-        language: 'fr',
-        timezone: 'America/Montreal',
-        onboarding_completed: false,
-      });
+      // Small delay to ensure auth.users record is committed
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      // Retry logic for profile creation (in case of timing issues)
+      let attempts = 0;
+      const maxAttempts = 3;
+      let profileError: any = null;
+
+      while (attempts < maxAttempts) {
+        const { error } = await supabase.from('user_profiles').insert({
+          id: userId,
+          first_name: onboardingData.name,
+          phone_number: onboardingData.phone,
+          email: email || null,
+          language: 'fr',
+          timezone: 'America/Montreal',
+          onboarding_completed: false,
+        });
+
+        if (!error) {
+          profileError = null;
+          break; // Success!
+        }
+
+        profileError = error;
+        attempts++;
+
+        // If it's a foreign key error, wait a bit and retry
+        if (error.code === '23503' && attempts < maxAttempts) {
+          console.log(`Profile creation attempt ${attempts} failed, retrying...`);
+          await new Promise(resolve => setTimeout(resolve, 1000));
+        } else {
+          break; // Other error or max attempts reached
+        }
+      }
 
       if (profileError) throw profileError;
 
-      // Create security settings
-      await supabase.from('security_settings').insert({
+      // Create security settings (with error handling)
+      const { error: securityError } = await supabase.from('security_settings').insert({
         user_id: userId,
         protection_level: 'medium',
         call_protection_enabled: true,
         sms_protection_enabled: true,
       });
 
-      // Create user stats
-      await supabase.from('user_stats').insert({
+      if (securityError) {
+        console.warn('Security settings creation warning:', securityError);
+        // Don't throw - continue anyway
+      }
+
+      // Create user stats (with error handling)
+      const { error: statsError } = await supabase.from('user_stats').insert({
         user_id: userId,
         since: new Date().toISOString(),
       });
+
+      if (statsError) {
+        console.warn('User stats creation warning:', statsError);
+        // Don't throw - continue anyway
+      }
 
       // Continue to permissions
       navigation.navigate('Permissions', { userId });
     } catch (error: any) {
       console.error('Profile creation error:', error);
-      Alert.alert('Erreur', 'Erreur lors de la création du profil');
+      Alert.alert(
+        'Erreur',
+        'Erreur lors de la création du profil. Veuillez réessayer.',
+        [
+          {
+            text: 'OK',
+            onPress: () => setLoading(false)
+          }
+        ]
+      );
     }
   };
 
