@@ -87,13 +87,6 @@ success: {
   950: 'hsl(145, 87%, 7%)';
 },
 
-neutral: {
-}
-
-shadows: {
-
-}
-
 
 ```
 
@@ -101,6 +94,7 @@ shadows: {
 
 ### Fonts
 
-- 'PP Monument Normal Regular '
+Body: 'PP Monument Normal Regular '
 
-- 'PP Monument Normal Black'
+Heading: 'PP Monument Normal Black'
+

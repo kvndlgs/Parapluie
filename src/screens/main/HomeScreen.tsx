@@ -111,7 +111,7 @@ export function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: 'hsl(300, 15%, 97%)',
   },
   scrollView: {
     flex: 1,

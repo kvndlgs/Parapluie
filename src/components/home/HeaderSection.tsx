@@ -20,10 +20,10 @@ export function HeaderSection({ userName, currentDate, protectionStatus }: Heade
 
   const getStatusColor = () => {
     switch (protectionStatus) {
-      case 'active': return '#4CAF50';
-      case 'paused': return '#FFC107';
-      case 'disabled': return '#F44336';
-      default: return '#666';
+      case 'active': return 'hsl(145, 87%, 67%)';
+      case 'paused': return 'hsl(36, 97%, 56%)';
+      case 'disabled': return 'hsl(300, 15%, 77%)';
+      default: return 'hsl(300, 15%, 88%)';
     }
   };
 
@@ -52,12 +52,12 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     paddingTop: 60, // Account for status bar
-    backgroundColor: '#000',
+    backgroundColor: 'hsl(300, 15%, 98%)',
   },
   greeting: {
     fontFamily: 'Monument-Regular',
     fontSize: 28,
-    color: '#fff',
+    color: '#6F526F',
     marginBottom: 8,
   },
   date: {
@@ -79,6 +79,6 @@ const styles = StyleSheet.create({
   statusText: {
     fontFamily: 'Monument-Regular',
     fontSize: 13,
-    color: '#fff',
+    color: '#6F526F',
   },
 });

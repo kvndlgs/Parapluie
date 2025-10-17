@@ -55,11 +55,7 @@ export function RootNavigator() {
     return <OnboardingNavigator />;
   }
 
-  // If user is authenticated, show main app
-  if (isAuthenticated) {
-    return <MainNavigator />;
-  }
-
-  // Otherwise show onboarding (can be updated later to show login/register)
-  return <OnboardingNavigator />;
+  // If onboarding is complete, show main app
+  // TODO: Add proper authentication flow later
+  return <MainNavigator />;
 }

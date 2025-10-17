@@ -1,35 +1,26 @@
 # App Flows - Parapluie
 
-## 1. Seniors Onboarding Flow
+## 1. Onboarding Flows
 
-```mermaid
-flowchart LR
-A[User Launches App] --> B[Welcome Screen]
-B -- { Continuer ? } --> C[Permission Screen]
-B -- { Sauter ? } --> C[Permision Screen]
-C -- { Accepter ? } --> D[Invitation Screen]
-C -- { Sauter ? } --> D[Invitation Screen]
-D -- { Ajouter contact ? } --> E[Contact Info]
-E -- { Creer Invitation ? } --> F[Code Share Screen]
-D -- { Sauter ? } --> G[Home Screen]
-F -- { Envoyer code par SMS ?} --> F[Confirmation Confirmation Screen]
-F -- { Envoyer code par Email ?} --> I[Confirmation Screen]
-F -- { En personne ? } --> I[Confirmation Screen]
-I -- { Terminer ? } --> G[Home Screen] 
+# Parapluie Onboarding Flows v2.0
 
-%% Styling
-classDef start fill:#ffffff,stroke:#E8E47F,stroke-width:2px
-classDef screens fill:#ffffff,stroke:#6FDAC8,stroke-width:2px
+## Overview
+This document defines the complete onboarding flows for both seniors and trusted contacts, including all decision points, error handling, and edge cases.
 
-class A start
-class B,C,D,E,F,I,G screens
-```
+---
 
-## 2. Trusted Contact Flow
+## 1. SENIOR ONBOARDING FLOW
 
-## 3. Authentication Flow
+see onboarding-flows.md
 
-## 4. Main navigation Flow
+## Version History
+
+- v2.0 (2025-01-15): Added account creation screen, refined flows
+- v1.0 (2025-01-10): Initial flow documentation
+
+## 2. Authentication Flow
+
+## 3. Main navigation Flow
 
 ### Three main routes:
 
@@ -38,7 +29,7 @@ class B,C,D,E,F,I,G screens
 3. /security (Sécurité) - Safety settings and controls
 
 
-## 5. Security Events Flow
+## 4. Security Events Flow
 
 ```mermaid
 graph TD

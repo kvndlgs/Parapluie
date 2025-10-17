@@ -4,31 +4,79 @@
     "slug": "Parapluie",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icons/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "splash": {
-      "backgroundColor": "#000000",
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "cover"
-    },
+    "scheme": "parapluie",
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/icons/splash-icon-light.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#6F526F",
+          "dark": {
+            "image": "./assets/icons/splash-icon-dark.png",
+            "backgroundColor": "#FFFFFF"
+          }
+        }
+      ],
+      [
+        "react-native-permissions",
+        {
+          "iosPermissions": [
+            "LocationWhenInUse"
+          ],
+          "androidPermissions": [
+            "android.permission.ACCESS_FINE_LOCATION",
+            "android.permission.READ_PHONE_STATE",
+            "android.permission.READ_SMS",
+            "android.permission.CALL_PHONE"
+          ]
+        }
+      ]
+    ],
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.parapluie.app",
       "icon": {
-        "dark": "./assets/ios-dark.png",
-        "light": "./assets/ios-light.png",
-        "tinted": "./assets/ios-tinted.png"
-      }
+        "dark": "./assets/icons/ios-dark.png",
+        "light": "./assets/icons/ios-light.png",
+        "tinted": "./assets/icons/ios-tinted.png"
+      },
+      "associatedDomains": [
+        "applinks:parapluie.app"
+      ]
     },
     "android": {
+      "package": "com.parapluie.app",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icons/adaptive-icon.png",
+        "monochromeImage": "./assets/icons/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "parapluie.app",
+              "pathPrefix": "/auth"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
     },
     "web": {
-      "favicon": "./assets/icon.png"
+      "favicon": "./assets/icons/favicon.png"
     }
   }
 }

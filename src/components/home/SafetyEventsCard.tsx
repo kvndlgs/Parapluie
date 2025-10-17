@@ -15,12 +15,12 @@ interface SafetyEventsCardProps {
 export function SafetyEventsCard({ stats, onViewAll }: SafetyEventsCardProps) {
   const getThreatLevelColor = (level: ThreatLevel) => {
     switch (level) {
-      case ThreatLevel.NONE: return '#4CAF50';
-      case ThreatLevel.LOW: return '#8BC34A';
-      case ThreatLevel.MEDIUM: return '#FFC107';
-      case ThreatLevel.HIGH: return '#FF9800';
-      case ThreatLevel.CRITICAL: return '#F44336';
-      default: return '#666';
+      case ThreatLevel.NONE: return 'hsl(145, 87%, 73%)';
+      case ThreatLevel.LOW: return 'hsl(145, 87%, 43%)';
+      case ThreatLevel.MEDIUM: return 'hsl(36, 97%, 77%)';
+      case ThreatLevel.HIGH: return 'hsl(36, 97%, 57%)';
+      case ThreatLevel.CRITICAL: return 'hsl(340, 72%, 57%)';
+      default: return 'hsl(300, 15%, 88%)';
     }
   };
 
@@ -72,13 +72,11 @@ export function SafetyEventsCard({ stats, onViewAll }: SafetyEventsCardProps) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1A1A1A',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 20,
     marginHorizontal: 20,
     marginBottom: 20,
-    borderWidth: 1,
-    borderColor: '#785978',
   },
   header: {
     flexDirection: 'row',
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'Monument-Regular',
     fontSize: 18,
-    color: '#fff',
+    color: '#6F526F',
   },
   badge: {
     paddingHorizontal: 12,
@@ -129,6 +127,6 @@ const styles = StyleSheet.create({
   viewAllText: {
     fontFamily: 'Monument-Regular',
     fontSize: 14,
-    color: '#785978',
+    color: '#6F526F',
   },
 });

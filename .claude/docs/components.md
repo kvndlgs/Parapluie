@@ -1,5 +1,9 @@
 # Components Specification - Parapluie
 
+## Tamagui Integration
+
+Uses Tamaguie components with custom colors and fonts provided in design-system.md
+
 ## Navigation Components
 
 ### AppNavigator
