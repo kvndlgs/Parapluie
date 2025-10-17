@@ -1,16 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import { useFonts } from '@expo-google-fonts/material-symbols/useFonts';
-import { MaterialSymbols_300Light } from '@expo-google-fonts/material-symbols';
+
 
 export function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
-  const [fontsLoaded] = useFonts({
-    MaterialSymbols_300Light,
-  });
-  if (!fontsLoaded) {
-    return null;
-  } else {
   return (
     <View style={styles.container}>
       {/* Tab Bar Background */}
@@ -67,8 +60,8 @@ export function CustomTabBar({ state, descriptors, navigation }: BottomTabBarPro
       </TouchableOpacity>
     </View>
   );
- }
 }
+
 
 const styles = StyleSheet.create({
   container: {

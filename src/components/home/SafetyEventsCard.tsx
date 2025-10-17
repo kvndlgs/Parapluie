@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { ThreatLevel } from '../../types';
 
 interface SafetyEventsCardProps {
@@ -11,6 +11,7 @@ interface SafetyEventsCardProps {
   };
   onViewAll: () => void;
 }
+
 
 export function SafetyEventsCard({ stats, onViewAll }: SafetyEventsCardProps) {
   const getThreatLevelColor = (level: ThreatLevel) => {
@@ -38,12 +39,7 @@ export function SafetyEventsCard({ stats, onViewAll }: SafetyEventsCardProps) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Événements de sécurité</Text>
-        {stats.threatsDetected > 0 && (
-          <View style={[styles.badge, { backgroundColor: getThreatLevelColor(stats.highestThreatLevel) }]}>
-            <Text style={styles.badgeText}>{getThreatLevelLabel(stats.highestThreatLevel)}</Text>
-          </View>
-        )}
+        <Text style={styles.title}><Text style={{ fontFamily: 'MaterialSymbols_300Light', fontSize: 26 }}>history</Text>Événements de sécurité</Text>
       </View>
 
       <View style={styles.statsGrid}>
@@ -88,6 +84,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Monument-Regular',
     fontSize: 18,
     color: '#6F526F',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 4,
   },
   badge: {
     paddingHorizontal: 12,
