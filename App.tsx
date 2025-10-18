@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
+import { useWindowDimensions } from 'react-native';
 import { Provider } from 'react-redux';
-import { TamaguiProvider } from '@tamagui/core';
+import { TamaguiProvider } from 'tamagui';
 import { store } from './src/store';
 import { RootNavigator } from './src/navigation/RootNavigator';
 import { useFonts } from 'expo-font';
 import { testConnection } from './src/lib/testSupabase';
 import { MaterialSymbols_300Light } from '@expo-google-fonts/material-symbols';
-import config from './src/tamagui/config';
+import config from './src/config/tamagui.config';
 
 export default function App() {
+  const dimensions = useWindowDimensions();
+
   useEffect(() => {
     testConnection();
   }, []);

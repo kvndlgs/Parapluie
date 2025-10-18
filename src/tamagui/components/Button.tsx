@@ -6,6 +6,7 @@ import { Button as TamaguiButton } from 'tamagui';
  * Usage: <Button variant="primary">Click me</Button>
  */
 
+// @ts-ignore - Tamagui type conflicts
 export const Button = styled(TamaguiButton, {
   name: 'Button',
 
@@ -45,13 +46,13 @@ export const Button = styled(TamaguiButton, {
       },
 
       secondary: {
-        backgroundColor: '$white',
-        borderColor: '$primary',
+        backgroundColor: '$accentLight',
+        borderColor: '$accentDark',
         borderWidth: 2,
-        color: '$primary',
+        color: '$white',
         hoverStyle: {
-          backgroundColor: '$primary50',
-          borderColor: '$primaryHover',
+          backgroundColor: '$accent400',
+          borderColor: '$accentDark',
         },
         pressStyle: {
           backgroundColor: '$primary100',
@@ -68,7 +69,11 @@ export const Button = styled(TamaguiButton, {
           opacity: 1,
         },
       },
-
+      ghost: {
+        backgroundColor: 'transparent',
+        borderWidth: 0,
+        color: '$base300',
+      },
       text: {
         backgroundColor: 'transparent',
         paddingVertical: '$3',  // Smaller

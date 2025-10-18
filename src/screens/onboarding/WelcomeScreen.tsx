@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { View, StyleSheet, Text, Alert } from 'react-native';
-import { Button, Input, WalterBubble } from '../../components';
+import { Alert } from 'react-native';
+import { YStack, XStack, Text } from 'tamagui';
+import { WalterBubble } from '../../components';
+import { Button, Input } from '../../tamagui/components';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { colors } from '../../theme/colors';
+
 
 type OnboardingStackParamList = {
   Welcome: undefined;
@@ -143,120 +145,114 @@ export function WelcomeScreen({ navigation }: Props) {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
+    <SafeAreaView style={{ flex: 1 }}>
+      <YStack flex={1} justifyContent="space-between" paddingVertical="$6">
         {/* Progress Indicator */}
-        <View style={styles.progressContainer}>
-          <Text style={styles.progressText}>━━━━━━━━━━ 1/7</Text>
-        </View>
+        <YStack paddingHorizontal="$6" paddingTop="$2">
+          <Text
+            fontSize="$3"
+            fontFamily="Monument-Light"
+            textAlign="center"
+          >
+            ━━━━━━━━━━ 1/7
+          </Text>
+        </YStack>
 
         {/* Top Section - Walter and Message */}
-        <View style={styles.topSection}>
+        <YStack flex={1} justifyContent="center" gap="$6">
           <WalterBubble
             imageSrc={require('../../../assets/walter/walter-smile-1.png')}
-            message="Bonjour! Je m'appelle Walter, votre compagnon numérique.
-
-Ma mission est de vous protéger des appels et messages indésirables.
-
-Et vous, comment vous appelez-vous?"
+            message="Bonjour ! Je m'appelle Waler, votre compagnon. Ma mission est de vous protéger des appels et messages indésirables.  Et vous, comment vous appelez-vous ?"
           />
 
           {/* Name Input Field */}
-          <View style={styles.inputContainer}>
-            <Input
-              placeholder="Votre nom"
-              value={userName}
-              onChangeText={(text) => {
-                setUserName(text);
-                setNameError('');
-              }}
-              autoFocus
-              returnKeyType="next"
-            />
-            {nameError ? <Text style={styles.errorText}>{nameError}</Text> : null}
-          </View>
+          <YStack paddingHorizontal="$6" gap="$2">
+            <XStack gap="$2" alignItems="center">
+              <Text
+                fontFamily="MaterialSymbols-Regular"
+                fontSize={24}
+              >
+                person
+              </Text>
+              <YStack flex={1}>
+                <Input
+                  placeholder="Votre nom"
+                  value={userName}
+                  onChangeText={(text) => {
+                    setUserName(text);
+                    setNameError('');
+                  }}
+                  autoFocus
+                  returnKeyType="next"
+                />
+              </YStack>
+            </XStack>
+            {nameError ? (
+              <Text
+                fontSize="$3"
+                fontFamily="Monument-Light"
+              >
+                {nameError}
+              </Text>
+            ) : null}
+          </YStack>
 
           {/* Phone Input Field */}
-          <View style={styles.inputContainer}>
-            <Input
-              placeholder="+1 (514) 555-1234"
-              value={phoneNumber}
-              onChangeText={handlePhoneChange}
-              keyboardType="phone-pad"
-              returnKeyType="done"
-            />
+          <YStack paddingHorizontal="$6" gap="$2">
+            <XStack gap="$2" alignItems="center">
+              <Text
+                fontFamily="MaterialSymbols-Regular"
+                fontSize={24}
+              >
+                phone
+              </Text>
+              <YStack flex={1}>
+                <Input
+                  placeholder="(514) 555-5555"
+                  value={phoneNumber}
+                  onChangeText={handlePhoneChange}
+                  keyboardType="phone-pad"
+                  returnKeyType="done"
+                />
+              </YStack>
+            </XStack>
             {phoneError ? (
-              <Text style={styles.errorText}>{phoneError}</Text>
+              <Text
+                fontSize="$3"
+                fontFamily="Monument-Light"
+              >
+                {phoneError}
+              </Text>
             ) : (
-              <Text style={styles.helperText}>
+              <Text
+                fontSize="$3"
+                fontFamily="Monument-Light"
+              >
                 💡 Votre numéro nous aide à identifier les appels pour vous.
               </Text>
             )}
-          </View>
-        </View>
+          </YStack>
+        </YStack>
 
         {/* Bottom Section - Buttons */}
-        <View style={styles.buttonContainer}>
+        <YStack gap="$3" paddingHorizontal="$6">
           <Button
             variant="primary"
+            fullWidth
             onPress={handleContinue}
             disabled={!userName.trim() || !phoneNumber.trim()}
           >
-            Continuer →
+            Continuer
           </Button>
-          <Button variant="ghost" onPress={handleSkip}>
+          <Button
+            variant="ghost"
+            fullWidth
+            onPress={handleSkip}
+          >
             Sauter
           </Button>
-        </View>
-      </View>
+        </YStack>
+      </YStack>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.base[700],
-  },
-  content: {
-    flex: 1,
-    justifyContent: 'space-between',
-    paddingVertical: 24,
-  },
-  progressContainer: {
-    paddingHorizontal: 24,
-    paddingTop: 8,
-  },
-  progressText: {
-    fontSize: 14,
-    color: colors.base[300],
-    fontFamily: 'Monument-Light',
-    textAlign: 'center',
-  },
-  topSection: {
-    flex: 1,
-    justifyContent: 'center',
-    gap: 24,
-  },
-  inputContainer: {
-    paddingHorizontal: 24,
-  },
-  helperText: {
-    marginTop: 8,
-    fontSize: 13,
-    color: colors.base[300],
-    fontFamily: 'Monument-Light',
-    textAlign: 'left',
-  },
-  errorText: {
-    marginTop: 8,
-    fontSize: 13,
-    color: colors.danger[400],
-    fontFamily: 'Monument-Light',
-    textAlign: 'left',
-  },
-  buttonContainer: {
-    gap: 12,
-    paddingHorizontal: 24,
-  },
-});

@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import { Button, WalterBubble, Input } from '../../components';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { colors } from '../../theme/colors';
 import { supabase } from '../../lib/supabase';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -189,7 +188,7 @@ Merci de votre aide!`;
         return (
           <View style={styles.tabContent}>
             <TouchableOpacity style={styles.copyButton} onPress={copyCodeManually}>
-              <Icon name="content-copy" size={24} color={colors.primary[500]} />
+              <Icon name="content-copy" size={24} color='$primary500' />
               <Text style={styles.copyButtonText}>Copier le code</Text>
             </TouchableOpacity>
 
@@ -246,7 +245,7 @@ Merci de votre aide!`;
               <Icon
                 name="message-text"
                 size={24}
-                color={activeTab === 'sms' ? colors.primary[500] : colors.base[400]}
+
               />
               <Text
                 style={[styles.tabText, activeTab === 'sms' && styles.tabTextActive]}
@@ -262,7 +261,7 @@ Merci de votre aide!`;
               <Icon
                 name="email"
                 size={24}
-                color={activeTab === 'email' ? colors.primary[500] : colors.base[400]}
+  
               />
               <Text
                 style={[styles.tabText, activeTab === 'email' && styles.tabTextActive]}
@@ -278,7 +277,7 @@ Merci de votre aide!`;
               <Icon
                 name="clipboard-text"
                 size={24}
-                color={activeTab === 'manual' ? colors.primary[500] : colors.base[400]}
+
               />
               <Text
                 style={[styles.tabText, activeTab === 'manual' && styles.tabTextActive]}
@@ -299,7 +298,7 @@ Merci de votre aide!`;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.base[700],
+
   },
   scrollView: {
     flex: 1,
@@ -313,12 +312,12 @@ const styles = StyleSheet.create({
   },
   progressText: {
     fontSize: 14,
-    color: colors.base[300],
+
     fontFamily: 'Monument-Light',
     textAlign: 'center',
   },
   codeCard: {
-    backgroundColor: colors.primary[500],
+
     borderRadius: 16,
     padding: 24,
     alignItems: 'center',
@@ -347,12 +346,12 @@ const styles = StyleSheet.create({
   tabsLabel: {
     fontSize: 15,
     fontWeight: '600',
-    color: colors.base[200],
+
     textAlign: 'center',
   },
   tabs: {
     flexDirection: 'row',
-    backgroundColor: colors.base[600],
+
     borderRadius: 12,
     padding: 4,
     gap: 4,
@@ -365,15 +364,15 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   tabActive: {
-    backgroundColor: colors.base[700],
+
   },
   tabText: {
     fontSize: 12,
-    color: colors.base[400],
+
     fontWeight: '600',
   },
   tabTextActive: {
-    color: colors.primary[500],
+
   },
   tabContent: {
     gap: 16,
@@ -384,27 +383,27 @@ const styles = StyleSheet.create({
   inputLabel: {
     fontSize: 14,
     fontWeight: '600',
-    color: colors.base[200],
+
   },
   copyButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.base[600],
+
     borderRadius: 12,
     paddingVertical: 16,
     gap: 12,
     borderWidth: 2,
-    borderColor: colors.primary[500],
+
   },
   copyButtonText: {
     fontSize: 16,
     fontWeight: '600',
-    color: colors.primary[500],
+
   },
   tipText: {
     fontSize: 13,
-    color: colors.base[300],
+
     textAlign: 'center',
     fontStyle: 'italic',
   },

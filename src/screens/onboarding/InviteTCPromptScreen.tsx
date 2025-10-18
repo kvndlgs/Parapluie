@@ -3,7 +3,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import { Button, WalterBubble } from '../../components';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { colors } from '../../theme/colors';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { supabase } from '../../lib/supabase';
 
@@ -107,7 +106,7 @@ Désirez-vous inviter un membre de votre famille ou un proche à prendre part à
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.base[700],
+
   },
   content: {
     flex: 1,
@@ -121,7 +120,7 @@ const styles = StyleSheet.create({
   },
   progressText: {
     fontSize: 14,
-    color: colors.base[300],
+
     fontFamily: 'Monument-Light',
     textAlign: 'center',
   },
@@ -134,23 +133,23 @@ const styles = StyleSheet.create({
     gap: 24,
   },
   privacyCard: {
-    backgroundColor: colors.base[600],
+
     borderRadius: 16,
     padding: 20,
     borderWidth: 2,
-    borderColor: colors.primary[500],
+
   },
   privacyTitle: {
     fontSize: 18,
     fontWeight: '700',
-    color: colors.base[100],
+
     marginBottom: 16,
     textAlign: 'center',
   },
   privacyLabel: {
     fontSize: 15,
     fontWeight: '600',
-    color: colors.base[200],
+
     marginTop: 12,
     marginBottom: 8,
   },
@@ -159,7 +158,7 @@ const styles = StyleSheet.create({
   },
   privacyItem: {
     fontSize: 14,
-    color: colors.base[300],
+
     marginVertical: 4,
     paddingLeft: 8,
   },

@@ -3,7 +3,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, StyleSheet, Text } from 'react-native';
 import { WalterBubble } from '../../components';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { colors } from '../../theme/colors';
 import { useDispatch } from 'react-redux';
 import { setOnboardingComplete } from '../../store/slices/authSlice';
 
@@ -94,7 +93,7 @@ Allons explorer votre tableau de bord ensemble!`;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.base[700],
+
   },
   content: {
     flex: 1,
@@ -107,7 +106,7 @@ const styles = StyleSheet.create({
   },
   progressText: {
     fontSize: 14,
-    color: colors.base[300],
+
     fontFamily: 'Monument-Light',
     textAlign: 'center',
   },
@@ -137,7 +136,7 @@ const styles = StyleSheet.create({
     width: 12,
     height: 12,
     borderRadius: 6,
-    backgroundColor: colors.primary[500],
+
   },
   dot1: {
     opacity: 0.3,

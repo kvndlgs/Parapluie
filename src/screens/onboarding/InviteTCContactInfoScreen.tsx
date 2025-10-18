@@ -3,7 +3,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, StyleSheet, Text, Alert, ScrollView, TouchableOpacity } from 'react-native';
 import { Button, Input, WalterBubble } from '../../components';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { colors } from '../../theme/colors';
 import { supabase } from '../../lib/supabase';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -186,7 +185,7 @@ export function InviteTCContactInfoScreen({ navigation, route }: Props) {
             <Icon
               name={showRelationshipPicker ? 'chevron-up' : 'chevron-down'}
               size={24}
-              color={colors.base[400]}
+          
             />
           </TouchableOpacity>
           {relationshipError ? (
@@ -218,7 +217,7 @@ export function InviteTCContactInfoScreen({ navigation, route }: Props) {
                     {option.label}
                   </Text>
                   {relationship === option.value && (
-                    <Icon name="check" size={20} color={colors.primary[500]} />
+                    <Icon name="check" size={20} />
                   )}
                 </TouchableOpacity>
               ))}
@@ -253,7 +252,7 @@ export function InviteTCContactInfoScreen({ navigation, route }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.base[700],
+
   },
   scrollView: {
     flex: 1,
@@ -267,7 +266,7 @@ const styles = StyleSheet.create({
   },
   progressText: {
     fontSize: 14,
-    color: colors.base[300],
+
     fontFamily: 'Monument-Light',
     textAlign: 'center',
   },
@@ -277,11 +276,11 @@ const styles = StyleSheet.create({
   inputLabel: {
     fontSize: 14,
     fontWeight: '600',
-    color: colors.base[200],
+
   },
   errorText: {
     fontSize: 13,
-    color: colors.danger[400],
+
   },
   pickerButton: {
     flexDirection: 'row',
@@ -305,7 +304,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 12,
     borderWidth: 2,
-    borderColor: colors.primary[500],
+
     marginTop: 8,
     overflow: 'hidden',
   },
@@ -319,7 +318,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#E5E7EB',
   },
   optionSelected: {
-    backgroundColor: colors.primary[50],
+
   },
   optionText: {
     fontSize: 16,
@@ -327,11 +326,11 @@ const styles = StyleSheet.create({
   },
   optionTextSelected: {
     fontWeight: '600',
-    color: colors.primary[600],
+
   },
   helperText: {
     fontSize: 13,
-    color: colors.base[300],
+
     fontFamily: 'Monument-Light',
     textAlign: 'center',
   },

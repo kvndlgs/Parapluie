@@ -1,7 +1,18 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm start)",
+      "Bash(npx tsc:*)",
+      "Bash(npx expo start:*)",
+      "Bash(pkill:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(awk:*)",
+      "Bash(xargs:*)",
+      "Bash(npx @tamagui/cli check:*)"
     ],
     "deny": [],
     "ask": []

@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { Button, Input, WalterBubble } from '../../components';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { colors } from '../../theme/colors';
+
 import { supabase } from '../../lib/supabase';
 import { useDeepLinkHandler, initiateOAuthFlow } from '../../lib/deepLinking';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -490,7 +490,7 @@ Créons votre compte sécurisé.`}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.base[700],
+
   },
   scrollView: {
     flex: 1,
@@ -504,12 +504,12 @@ const styles = StyleSheet.create({
   },
   progressText: {
     fontSize: 14,
-    color: colors.base[300],
+
     fontFamily: 'Monument-Light',
     textAlign: 'center',
   },
   trialBanner: {
-    backgroundColor: colors.primary[500],
+
     borderRadius: 12,
     padding: 16,
     alignItems: 'center',
@@ -554,11 +554,11 @@ const styles = StyleSheet.create({
   dividerLine: {
     flex: 1,
     height: 1,
-    backgroundColor: colors.base[500],
+ 
   },
   dividerText: {
     fontSize: 14,
-    color: colors.base[300],
+
     fontWeight: '600',
   },
   inputContainer: {
@@ -567,7 +567,7 @@ const styles = StyleSheet.create({
   inputLabel: {
     fontSize: 14,
     fontWeight: '600',
-    color: colors.base[200],
+
   },
   passwordInputContainer: {
     position: 'relative',
@@ -579,20 +579,23 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontSize: 13,
-    color: colors.danger[400],
+
   },
   strengthContainer: {
     marginTop: 8,
   },
   strengthBar: {
     height: 6,
-    backgroundColor: colors.base[600],
+
     borderRadius: 3,
     overflow: 'hidden',
   },
   strengthFill: {
     height: '100%',
     borderRadius: 3,
+  },
+  requirementMet: {
+    color: 'green',
   },
   strengthText: {
     fontSize: 13,
@@ -606,25 +609,23 @@ const styles = StyleSheet.create({
   requirementsTitle: {
     fontSize: 13,
     fontWeight: '600',
-    color: colors.base[300],
+
     marginBottom: 4,
   },
   requirementText: {
     fontSize: 13,
-    color: colors.base[400],
+
   },
-  requirementMet: {
-    color: colors.success[500],
-  },
+
   infoText: {
     fontSize: 13,
-    color: colors.base[300],
+
     textAlign: 'center',
     marginTop: 8,
   },
   termsText: {
     fontSize: 12,
-    color: colors.base[400],
+
     textAlign: 'center',
   },
   signInContainer: {
@@ -633,11 +634,11 @@ const styles = StyleSheet.create({
   },
   signInText: {
     fontSize: 14,
-    color: colors.base[300],
+
     textAlign: 'center',
   },
   signInLink: {
-    color: colors.primary[400],
+
     fontWeight: '600',
   },
 });

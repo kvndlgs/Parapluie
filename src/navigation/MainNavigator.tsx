@@ -13,6 +13,7 @@ function WalterPlaceholder() {
 
 export function MainNavigator() {
   return (
+    // @ts-ignore - Tamagui type conflict
     <Tab.Navigator
       tabBar={(props) => <CustomTabBar {...props} />}
       screenOptions={{

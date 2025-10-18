@@ -3,7 +3,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, ScrollView, StyleSheet, Alert, Platform, Text } from 'react-native';
 import { Button, WalterBubble, InfoCard } from '../../components';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { colors } from '../../theme/colors';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { supabase } from '../../lib/supabase';
 import { request, PERMISSIONS, RESULTS } from 'react-native-permissions';
@@ -226,7 +225,7 @@ Pour vous protéger efficacement, j'aurai besoin de votre accord sur quelques pe
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.base[700],
+
   },
   content: {
     flex: 1,
@@ -240,7 +239,7 @@ const styles = StyleSheet.create({
   },
   progressText: {
     fontSize: 14,
-    color: colors.base[300],
+
     fontFamily: 'Monument-Light',
     textAlign: 'center',
   },
@@ -258,7 +257,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   badge: {
-    backgroundColor: colors.danger[500],
+
     borderRadius: 8,
     paddingVertical: 6,
     paddingHorizontal: 12,
@@ -272,7 +271,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
   },
   badgeRecommended: {
-    backgroundColor: colors.primary[500],
+    backgroundColor: '#F59E0B',
   },
   badgeTextRecommended: {
     fontSize: 12,

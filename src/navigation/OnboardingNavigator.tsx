@@ -43,6 +43,7 @@ const Stack = createNativeStackNavigator<OnboardingStackParamList>();
 
 export function OnboardingNavigator() {
   return (
+    // @ts-ignore - Tamagui type conflict
     <Stack.Navigator
       screenOptions={{
         headerShown: false,

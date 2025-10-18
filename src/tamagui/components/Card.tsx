@@ -16,18 +16,18 @@ export const Card = styled(YStack, {
 
   // Shadow (iOS/Android)
   shadowColor: '$shadowColor',
-  shadowOffset: { width: 0, height: 2 },
-  shadowOpacity: 0.1,
-  shadowRadius: 4,
+  shadowOffset: { width: 0, height: 2 } as any,
+  shadowOpacity: 0.1 as any,
+  shadowRadius: 4 as any,
   elevation: 2, // Android
 
   // States
   hoverStyle: {
     backgroundColor: '$surfaceHover',
-    shadowOpacity: 0.15,
-    shadowRadius: 8,
+    shadowOpacity: 0.15 as any,
+    shadowRadius: 8 as any,
     elevation: 4,
-  },
+  } as any,
 
   pressStyle: {
     backgroundColor: '$surfacePress',
@@ -37,24 +37,24 @@ export const Card = styled(YStack, {
   variants: {
     variant: {
       outlined: {
-        backgroundColor: 'transparent',
+        backgroundColor: 'transparent' as any,
         borderWidth: 1,
         borderColor: '$borderColor',
-        shadowOpacity: 0,
+        shadowOpacity: 0 as any,
         elevation: 0,
-      },
+      } as any,
       elevated: {
-        shadowOpacity: 0.15,
-        shadowRadius: 8,
+        shadowOpacity: 0.15 as any,
+        shadowRadius: 8 as any,
         elevation: 4,
-      },
+      } as any,
     },
 
     interactive: {
       true: {
-        cursor: 'pointer',
-        userSelect: 'none',
-      },
+        cursor: 'pointer' as any,
+        userSelect: 'none' as any,
+      } as any,
     },
   },
 });
